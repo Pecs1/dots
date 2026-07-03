@@ -14,11 +14,12 @@ hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 
--- force gbm as a backend
+hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
+
 -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/#nvidia-specific
-hl.env("GBM_BACKEND", "nvidia-drm")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "mesa")
+hl.env("LIBVA_DRIVER_NAME", "iHD")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- aliases
 global terminal    = "kitty"
