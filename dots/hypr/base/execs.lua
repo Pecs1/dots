@@ -1,6 +1,3 @@
--- its a bit fucked, but i think i can still copy paste :P
-hl.exec_cmd("pkill wl-paste; wl-paste --watch cliphist store")
-
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function ()
      -- system
@@ -8,6 +5,9 @@ hl.on("hyprland.start", function ()
      hl.exec_cmd("hypridle")
      hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 
+     hl.exec_cmd("wl-paste --type text --watch cliphist store")
+     hl.exec_cmd("wl-paste --type image --watch cliphist store")
+     
      -- misc
      hl.exec_cmd("easyeffects --hide-window --service-mode")
 end)
